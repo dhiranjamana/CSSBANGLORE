@@ -31,8 +31,8 @@ cf.set_config_file(offline=True, world_readable=True, theme='ggplot')
 
 # In[22]:
 
-df = pd.read_csv("C:\Users\css113429\Desktop\Google Sanofi\\encoded_data_vaxitrend_new_v2.csv")
-pam_mapping = pd.read_csv("C:\Users\css113429\Desktop\Google Sanofi\\PAM_ScoreQuestions_65plus_2.csv")
+df = pd.read_csv("..\input_files\\encoded_data_vaxitrend_new_v2.csv")
+pam_mapping = pd.read_csv("..\input_files\\PAM_ScoreQuestions_65plus_2.csv")
 
 
 # In[23]:
