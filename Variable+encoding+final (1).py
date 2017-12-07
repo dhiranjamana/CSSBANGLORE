@@ -31,9 +31,9 @@ cf.set_config_file(offline=True, world_readable=True, theme='ggplot')
 
 # In[42]:
 
-df = pd.read_csv("C:\Users\css113429\Desktop\Google Sanofi\\Combined_data_cleaned_v4_drilldown.csv")
-variable_encoding = pd.read_csv("C:\Users\css113429\Desktop\Google Sanofi\\variable_encoding_2_65plus.csv")
-pam_mapping = pd.read_csv("C:\Users\css113429\Desktop\Google Sanofi\\PAM_ScoreQuestions_65plus_2.csv")
+df = pd.read_csv("..\input_files\\Combined_data_cleaned_v4_drilldown.csv")
+variable_encoding = pd.read_csv("..\input_files\\variable_encoding_2_65plus.csv")
+pam_mapping = pd.read_csv("..\input_files\\PAM_ScoreQuestions_65plus_2.csv")
 
 
 # In[43]:
@@ -61,9 +61,4 @@ for i in list(df_output['Country'].unique()):
     for j in themes:
         theme_questions = list(pam_mapping.loc[pam_mapping['Theme'] == j,i])
         df_output.loc[df_output['Country'] == i,j] = df_output.loc[df_output['Country'] == i,theme_questions].mean(axis=1)
-
-
-# In[46]:
-
-df_output
 
