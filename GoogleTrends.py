@@ -8,7 +8,7 @@ import numpy as np
 import pandas as pd
 import glob
 
-path ="C:/Users/css112831/Desktop/GoogleTrends/France"
+path ="..."
 allFiles = glob.glob(path + "/*.csv")
 list_ = []
 for file_ in allFiles:
@@ -18,7 +18,7 @@ for file_ in allFiles:
 df_fr = pd.concat(list_, axis=1)
 df_france = df_fr.loc[:,~df_fr.columns.duplicated()]
 
-path ="C:/Users/css112831/Desktop/GoogleTrends/Mexico"
+path =".../Mexico"
 allFiles = glob.glob(path + "/*.csv")
 list_ = []
 for file_ in allFiles:
@@ -28,7 +28,7 @@ for file_ in allFiles:
 df_Me = pd.concat(list_, axis=1)
 df_Mexico = df_Me.loc[:,~df_Me.columns.duplicated()]
 
-path ="C:/Users/css112831/Desktop/GoogleTrends/UK"
+path =".../UK"
 allFiles = glob.glob(path + "/*.csv")
 list_ = []
 for file_ in allFiles:
@@ -38,7 +38,7 @@ for file_ in allFiles:
 df_uk = pd.concat(list_, axis=1)
 df_UK = df_uk.loc[:,~df_uk.columns.duplicated()]
 
-path ="C:/Users/css112831/Desktop/GoogleTrends/USA"
+path =".../USA"
 allFiles = glob.glob(path + "/*.csv")
 list_ = []
 for file_ in allFiles:
@@ -48,12 +48,12 @@ for file_ in allFiles:
 df_us = pd.concat(list_, axis=1)
 df_usa = df_us.loc[:,~df_us.columns.duplicated()]
 
-df_france.to_csv("C:/Users/css112831/Desktop/GoogleTrends/France/Combined_fr.csv")
-df_Mexico.to_csv("C:/Users/css112831/Desktop/GoogleTrends/Mexico/Combined_mexico.csv")
-df_UK.to_csv("C:/Users/css112831/Desktop/GoogleTrends/UK/Combined_uk.csv")
-df_usa.to_csv("C:/Users/css112831/Desktop/GoogleTrends/USA/Combined_usa.csv")
+df_france.to_csv(".../Combined_fr.csv")
+df_Mexico.to_csv(".../Combined_mexico.csv")
+df_UK.to_csv(".../Combined_uk.csv")
+df_usa.to_csv(".../Combined_usa.csv")
 
-data = pd.read_csv("C:/Users/css112831/Desktop/Apps/Vaxitrend_state_combined/data_address_normalized.csv")
+data = pd.read_csv(".../data_address_normalized.csv")
 
 
 Mexico_states_data = list(data["administrative_area_level_1"][data["country"]=="Mexico"].unique())
@@ -65,7 +65,7 @@ len(UK_states_data)
 France_states_data = list(data["administrative_area_level_1"][data["country"]=="France"].unique())
 len(France_states_data)
 
-path ="C:/Users/css112831/Desktop/GoogleTrends/USA/Geomap"
+path =".../Geomap"
 allFiles = glob.glob(path + "/*.csv")
 US = []
 for file_ in allFiles:
@@ -75,9 +75,9 @@ for file_ in allFiles:
 result = pd.concat(US,axis=1)
 result1 = result.fillna(0)
 
-result1.to_csv("C:/Users/css112831/Desktop/GoogleTrends/USA/GoogleTrends.csv")
+result1.to_csv(".../GoogleTrends.csv")
 
-path ="C:/Users/css112831/Desktop/GoogleTrends/UK/Geomap"
+path =".../Geomap"
 allFiles = glob.glob(path + "/*.csv")
 UK = []
 for file_ in allFiles:
@@ -86,9 +86,9 @@ for file_ in allFiles:
 result = pd.concat(UK,axis=1)
 result1 = result.fillna(0)
 
-result1.to_csv("C:/Users/css112831/Desktop/GoogleTrends/UK/GoogleTrends_UK.csv")    
+result1.to_csv(".../GoogleTrends_UK.csv")    
     
-path ="C:/Users/css112831/Desktop/GoogleTrends/Mexico/Geomap"
+path =".../Geomap"
 allFiles = glob.glob(path + "/*.csv")
 Mexico = []
 for file_ in allFiles:
@@ -97,9 +97,9 @@ for file_ in allFiles:
 result = pd.concat(Mexico,axis=1)
 result1 = result.fillna(0)
 
-result1.to_csv("C:/Users/css112831/Desktop/GoogleTrends/Mexico/GoogleTrends_Mexico.csv")  
+result1.to_csv(".../GoogleTrends_Mexico.csv")  
 
-path ="C:/Users/css112831/Desktop/GoogleTrends/France/Geomap"
+path =".../Geomap"
 allFiles = glob.glob(path + "/*.csv")
 France = []
 for file_ in allFiles:
@@ -108,15 +108,15 @@ for file_ in allFiles:
 result = pd.concat(France,axis=1)
 result1 = result.fillna(0)
 
-result1.to_csv("C:/Users/css112831/Desktop/GoogleTrends/France/GoogleTrends_France.csv")    
+result1.to_csv(".../GoogleTrends_France.csv")    
     
-us = pd.read_csv("C:/Users/css112831/Desktop/GoogleTrends/USA/GoogleTrends_US.csv")
-uk = pd.read_csv("C:/Users/css112831/Desktop/GoogleTrends/UK/GoogleTrends_UK.csv")  
-fr = pd.read_csv("C:/Users/css112831/Desktop/GoogleTrends/Mexico/GoogleTrends_Mexico.csv") 
-mex = pd.read_csv("C:/Users/css112831/Desktop/GoogleTrends/France/GoogleTrends_France.csv")
+us = pd.read_csv(".../GoogleTrends_US.csv")
+uk = pd.read_csv(".../GoogleTrends_UK.csv")  
+fr = pd.read_csv(".../GoogleTrends_Mexico.csv") 
+mex = pd.read_csv(".../GoogleTrends_France.csv")
 
 trends = us.append([uk,fr,mex])
 trends1 = trends.fillna(0)
 
-trends1.to_csv("C:/Users/css112831/Desktop/GoogleTrends/Gtrends_allstates.csv",index = False)
+trends1.to_csv(".../Gtrends_allstates.csv",index = False)
 
