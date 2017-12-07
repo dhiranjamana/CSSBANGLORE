@@ -31,7 +31,7 @@ cf.set_config_file(offline=True, world_readable=True, theme='ggplot')
 
 # In[42]:
 
-df = pd.read_csv("C:\Users\css113429\Desktop\Google Sanofi\\Combined_data_cleaned_v4_drilldown.csv")
+df = pd.read_csv("..\input_files\\Combined_data_cleaned_v4_drilldown.csv")
 
 
 # In[ ]:
@@ -66,4 +66,5 @@ for i in countries:
     svm_weights_selected /= svm_weights_selected.max()
     exec('imp_{}["importance"]=svm_weights_selected'.format(i))
     exec('imp_{}.columns=["Column_name","Coefficient","Importance"]'.format(i))
+    exec('imp_{}.to_csv("..\output_files\\SVM_importance_latest_{}.csv")'.format(i,i))
 
