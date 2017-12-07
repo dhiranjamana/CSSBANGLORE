@@ -28,7 +28,7 @@ cf.set_config_file(offline=True, world_readable=True, theme='ggplot')
 
 # In[77]:
 
-df = pd.read_csv("C:\Users\css113429\Desktop\Google Sanofi\simulation_new_theme_5.csv")
+df = pd.read_csv("..\input_files\simulation_new_theme_5.csv")
 
 df_new=df.drop(['Cluster'],axis=1)
 
@@ -565,5 +565,5 @@ for c in countries:
 
 # In[97]:
 
-recorded_2themes_country.to_csv("C:\Users\css113429\Desktop\Google Sanofi\\recorded_2themes_countrylevel_v2.csv")
+recorded_2themes_country.to_csv("..\input_files\\recorded_2themes_countrylevel_v2.csv")
 
