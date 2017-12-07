@@ -25,7 +25,7 @@ import os
 cf.set_config_file(offline=True, world_readable=True, theme='ggplot')
 
 
-df = pd.read_csv("C:\Users\css113429\Desktop\Google Sanofi\simulation_new_theme_5.csv")
+df = pd.read_csv("..\input_files\\simulation_new_theme_5.csv")
 
 df_new = df.drop(['Intent to vaccinate','Affordability','Accessibility','Time availability'],axis=1)
 
