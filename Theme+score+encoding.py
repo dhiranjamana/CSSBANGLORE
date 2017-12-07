@@ -10,8 +10,8 @@ from scipy import stats
 
 # In[83]:
 
-df = pd.read_csv("C:\Users\css113429\Desktop\Google Sanofi\\Combined_data_cleaned_v4_drilldown.csv")
-variable_encoding = pd.read_csv("C:\Users\css113429\Desktop\Google Sanofi\\variable_encoding.csv")
+df = pd.read_csv("..\input_files\\Combined_data_cleaned_v4_drilldown.csv")
+variable_encoding = pd.read_csv("..\input_files\\variable_encoding.csv")
 
 
 # In[84]:
@@ -27,6 +27,5 @@ for i in list(variable_encoding["Column"].unique()):
 
 # In[86]:
 
-df.to_csv("C:\Users\css113429\Desktop\Google Sanofi\\encoded_data_vaxitrend.csv")
-df
+df.to_csv("..\input_files\\encoded_data_vaxitrend.csv")
 
